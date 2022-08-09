@@ -1,0 +1,11 @@
+@mixin size ($w: inherit, $h: inherit) {
+    width: $w;
+    height: $h;
+}
+
+@mixin flex ($dir: inherit, $jstf: inherit, $align: inherit) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $jstf;
+    align-items: $align;
+}
