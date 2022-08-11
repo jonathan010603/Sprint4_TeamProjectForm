@@ -1,3 +1,41 @@
-@import url('./reset.css');
-@import url('./_variables.scss');
-@import url('./_mixins.scss');
+@import './reset.css';
+@import './abstracts/_mixins.scss';
+@import './abstracts/_variables.scss';
+@import './abstracts/form-1st';
+
+body {
+    font-family: "nunito";
+}
+
+main {
+    @include size (100vw, 100vh);
+    @include flex (column, center, center);
+
+    .container-div {
+        @include size (84.1166%, 86.7627%);
+        @include flex (column, center, center);
+        
+        .title-h1 {
+            font-family: 'inter';
+            margin-bottom: 4.9848%;
+        }
+
+        nav {
+            @include flex (row, space-between, center);
+            @include size (100%, 6.6465%);
+            margin-bottom: 5.2870%;
+
+            span {
+                @include size (33.3339%, 100%);
+                @include font (16px, 400, 18px);
+                @include flex (row, center, center);
+                text-align: center;
+            }
+        }
+
+        .content-section {
+            @include flex (column, space-between, center);
+            @include size (100%, 65.5589%);
+        }
+    }
+}

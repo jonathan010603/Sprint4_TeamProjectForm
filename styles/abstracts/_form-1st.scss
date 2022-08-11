@@ -1,0 +1,49 @@
+.form_1st {
+    @include flex (column, flex-start, center);
+    @include size (99.2292%, 100%);
+    margin-bottom: 8.5253%;
+
+    .input_label-div {
+        @include flex (column, space-between, left);
+        @include size (100%, 13.8248%);
+
+        &:nth-child(1) { margin-bottom: 7.8341%; }
+        &:nth-child(2) { margin-bottom: 6.4516%; }
+    }
+
+    .email_phone-div {
+        @include size (100%, 13.8248%);
+        @include flex (row, space-between, flex-start);
+        margin-bottom: 7.6036%;
+
+        .input_label-div {
+            &:nth-child(1) { @include size (64.0776%, 66.6666%); }
+            &:nth-child(2) { @include size (31.4563%, 66.6666%); }
+        }
+    }
+
+    .birthday-div{
+        @include flex (column, space-between, center);
+        @include size (100%, 20.7373%);
+        margin-bottom: 9.9078%;
+
+        span {
+            align-self: flex-start;
+        }
+
+        .selects-div {
+            @include flex (row, space-between, center);
+            @include size (100%, 67.7777%);
+            .input_label-div {
+                @include size (19.6116%, 100%);
+            }
+
+            .select_label-div {
+                @include size (22.3300%, 100%);
+                @include flex (column, space-between, left);
+            }
+        }
+
+        
+    }
+}

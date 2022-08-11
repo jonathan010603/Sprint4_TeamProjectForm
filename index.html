@@ -5,55 +5,36 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="/styles/reset.css">
-      <link rel="stylesheet" href="styles/styles.css">
+      <link rel="stylesheet" href="./styles/general.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+      <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
       <title>Team Project</title>
   </head>
   
   <body>
-  
     <main>
+      <div class="container-div">
         <h1 class="title-h1">Team Sign Up</h1>
+        <nav>
+          <span>Basic</span>
+          <span>Social</span>
+          <span>Certificates</span>
+        </nav>
         <section class="content-section">
-          <nav>
-            <span>Basic</span>
-            <span>Social</span>
-            <span>Certificates</span>
-          </nav>
-          <div class="formWrapper-div">
-            <form class="form_1st">
-              <input type="text">
-              <input type="text">
-              <input type="text">
-              <input type="text">
-              <select></select>
-              <select></select>
-              <select></select>
-              <input type="text">
-              <input type="checkbox"/>
-            </form>
-            
-            -----------
-            
-            <form class="form_2nd">
-              <input type="text">
-              <input type="text">
-            </form>
-            
-            -----------
-            
-            <form class="form_3rd">
-              <input type="text">
-              <button></button>
-              <input type="text">
-              <input type="text">
-              <input type="text">
-            </form>
-          </div>
         </section>
-        <button>Next</button>
+        <button onclick="Validation.validate()">Next</button>
+      </div>
     </main>
   
-    <script></script>
+
+    <script src="./scripts/components/Components.js"></script>
+    <script src="./scripts/components/TabsObject.js"></script>
+    <script src="./scripts/views/TabRenderer.js"></script>
+    <script src="./scripts/Validation.js"></script>
+    <script src="./scripts/Controller.js"></script>
+    <script>
+      let controller = new Controller();
+    </script>
 
   </body>
 </html>

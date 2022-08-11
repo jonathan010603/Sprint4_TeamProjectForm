@@ -9,3 +9,9 @@
     justify-content: $jstf;
     align-items: $align;
 }
+
+@mixin font ($fSize, $fWeight, $lineHeight) {
+    font-size: $fSize;
+    font-weight: $fWeight;
+    line-height: $lineHeight;
+}
