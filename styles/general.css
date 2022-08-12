@@ -9,12 +9,13 @@
   margin-bottom: 8.5253%;
 }
 .form_1st .input_label-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: left;
   width: 100%;
   height: 13.8248%;
+  color: #767676;
+}
+.form_1st .input_label-div input {
+  color: #767676;
+  border-color: #767676;
 }
 .form_1st .input_label-div:nth-child(1) {
   margin-bottom: 7.8341%;
@@ -49,6 +50,9 @@
   margin-bottom: 9.9078%;
 }
 .form_1st .birthday-div span {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 16px;
   align-self: flex-start;
 }
 .form_1st .birthday-div .selects-div {
@@ -62,6 +66,7 @@
 .form_1st .birthday-div .selects-div .input_label-div {
   width: 19.6116%;
   height: 100%;
+  align-self: flex-start;
 }
 .form_1st .birthday-div .selects-div .select_label-div {
   width: 22.33%;
@@ -70,6 +75,57 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: left;
+}
+.form_1st .birthday-div .selects-div select {
+  height: 66.6666%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #767676;
+  border-color: #767676;
+}
+.form_1st .form-check {
+  align-self: flex-start;
+}
+.form_1st .form-check .form-check-label {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  align-self: flex-start;
+}
+
+.form_2nd {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.form_2nd .certificates-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 28.6407%;
+}
+
+.form_3rd {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.form_3rd .certificates-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 28.6407%;
 }
 
 body {
@@ -103,6 +159,9 @@ main .container-div nav {
   align-items: center;
   width: 100%;
   height: 6.6465%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
   margin-bottom: 5.287%;
 }
 main .container-div nav span {
@@ -115,7 +174,12 @@ main .container-div nav span {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   text-align: center;
+}
+main .container-div nav .selected-span {
+  color: #074EE8;
+  border-bottom: 2px solid #074EE8;
 }
 main .container-div .content-section {
   display: flex;
@@ -124,4 +188,14 @@ main .container-div .content-section {
   align-items: center;
   width: 100%;
   height: 65.5589%;
+}
+main .container-div .content-section label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+}
+main .container-div .content-section input {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
 }/*# sourceMappingURL=general.css.map */

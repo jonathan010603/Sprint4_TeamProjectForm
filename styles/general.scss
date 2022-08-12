@@ -2,6 +2,8 @@
 @import './abstracts/_mixins.scss';
 @import './abstracts/_variables.scss';
 @import './abstracts/form-1st';
+@import './abstracts/form-2nd';
+@import './abstracts/form-3rd';
 
 body {
     font-family: "nunito";
@@ -23,19 +25,34 @@ main {
         nav {
             @include flex (row, space-between, center);
             @include size (100%, 6.6465%);
+            @include font (16px, 400, 18px);
             margin-bottom: 5.2870%;
 
             span {
                 @include size (33.3339%, 100%);
                 @include font (16px, 400, 18px);
                 @include flex (row, center, center);
+                cursor: pointer;
                 text-align: center;
+            }
+
+            .selected-span {
+                color: $primary;
+                border-bottom: 2px solid $primary;
             }
         }
 
         .content-section {
             @include flex (column, space-between, center);
             @include size (100%, 65.5589%);
+        
+            label {
+                @include font (14px, 400, 16px)
+            }
+
+            input {
+                @include font (16px, 400, 18px);
+            }
         }
     }
 }

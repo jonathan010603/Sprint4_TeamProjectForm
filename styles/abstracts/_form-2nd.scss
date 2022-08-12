@@ -1,0 +1,9 @@
+.form_2nd {
+    @include flex (column, flex-start, center);
+    @include size (100%, 100%);
+
+    .certificates-div {
+        @include flex (column, flex-start, center);
+        @include size (100%, 28.6407%);
+    }
+}
