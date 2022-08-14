@@ -11,9 +11,9 @@ class Validator {
             nickName: '',
             email: '',
             phone: '',
-            day: '',
-            month: '',
-            year: '',
+            day: '- - -',
+            month: '- - -',
+            year: '- - -',
             age: '',
             checkbox: false,
             linkedin: '',
@@ -45,12 +45,13 @@ class Validator {
             institution: document.querySelector('[name="institution"]').value,
             graduation: document.querySelector('[name="graduation"]').value,
         }
-        console.log(this._userInput)
-        if(!this.validateFields (i)) return controller._tabRenderer.setAvailable(i + 1, false);
-        i === 2 
-            ? alert("Finish")
-            : controller._tabRenderer.setAvailable(i + 1, true)
+
+        this.age_calc();
         
+        console.log(this._userInput)
+        console.log("Current tab is " + controller._tabRenderer._currentTab)
+        if(!this.validateFields (i)) return controller._tabRenderer.setCompleted(i, false);
+        controller._tabRenderer.setCompleted(i, true);
     }
 
     validateFields (i) {
@@ -61,15 +62,20 @@ class Validator {
                         .replace(/^(\(\d{2})(\d)/, '$1) $2')
                         .replace(/(\d{5})(\d{1,5})/, '$1-$2')
                         .replace(/(-\d{4})\d+?$/, '$1');
-                if(!this.let_spc.test(this._userInput.fullName)) return false
+                if(!this._userInput.fullName.match(this.let_spc) || this._userInput.fullName.match(/^\s*$/)) return false
                 if(!this._userInput.nickName.match(this.let_spc_und)) return false
                 if(!this._userInput.email.match(this.email_reg)) return false
+                if(this._userInput.age === '') return false;
+                if(!this._userInput.checkbox === true) return false
                 if(this.age === '') return false
                 return true;
 
             case 1:
-                if((!this._userInput.linkedin.match(this.linkedin_reg) || this._userInput.linkedin.match(/^\s*$/))) return false;
+                console.log("Esse é o 1")
+                if(!this._userInput.linkedin.match(this.linkedin_reg) && !this._userInput.linkedin.match(/^\s*$/)) return false;
+                console.log("Linkedin Validado");
                 if(!this._userInput.github.match(this.github_reg)) return false;
+                console.log("github Validado");
                 return true;
 
             case 2:
@@ -78,5 +84,39 @@ class Validator {
                 if((!this._userInput.graduation.match(this.let_spc) || this._userInput.graduation.match(/^\s*$/))) return false;
                 return true;
         }
+    }
+
+    age_calc () {
+        if ( this._userInput.day === "- - -" || this._userInput.month === "- - -" || this._userInput.year === "- - -") 
+            {
+                document.querySelector('[name="age"]').value = '';
+                this._userInput.age = '';
+                return;
+            }
+
+        if ( (this._userInput.day > 28) && (this._userInput.month === "2")) 
+            {
+                document.querySelector('[name="age"]').value = '';
+                this._userInput.age = '';
+                return;
+            }
+        
+        if ( (this._userInput.day > 30) && (
+            this._userInput.month === "4"
+            || this._userInput.month === "6"
+            || this._userInput.month === "9"
+            || this._userInput.month === "11")) 
+            {
+                document.querySelector('[name="age"]').value = '';
+                this._userInput.age = '';
+                return;
+            }
+
+        let diffYear = new Date().getFullYear() - this._userInput.year;
+        let diffMonth = (new Date().getMonth() - this._userInput.month) + 1;
+        diffMonth < 0 && (diffYear -= 1);
+        (diffMonth === 0 && (new Date().getDate() < this._userInput.day)) && (diffYear -= 1);
+        document.querySelector('[name="age"]').value = diffYear;
+        this._userInput.age = diffYear;
     }
 }

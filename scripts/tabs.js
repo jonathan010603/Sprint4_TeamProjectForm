@@ -15,6 +15,7 @@ for (let i = 1900; i <= new Date().getFullYear(); i++) {
 
 const tabs = [
     {
+        completed: false,
         available: false,
         html: 
             `<form class="form0">
@@ -41,6 +42,7 @@ const tabs = [
     },
     
     {
+        completed: false,
         available: false,
         html:
             `<form class="form1">
@@ -50,6 +52,7 @@ const tabs = [
     },
     
     {
+        completed: false,
         available: false,
         html: 
             `<form class="form2">

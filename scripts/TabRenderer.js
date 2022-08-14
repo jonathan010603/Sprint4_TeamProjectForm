@@ -31,12 +31,34 @@ class TabRenderer {
         return tabs[i].available === true;
     }
 
+    isCompleted (i) {
+        return tabs[i].completed === true;
+    }
+
+    setCompleted (i, bool) {
+        tabs[i].completed = bool;
+        this.updateButtons();
+    }
+
     setAvailable (i, bool) {
         tabs[i].available = bool;
         this.updateButtons();
     }
 
     updateButtons () {
+        if (this.isCompleted(0)) {
+            tabs[1].available = true;
+
+            this.isCompleted(1)
+                ? tabs[2].available = true
+                : tabs[2].available = false
+        }
+
+        else { 
+            tabs[1].available = false 
+            tabs[2].available = false 
+        }
+
         this.tabs_buttons.map((tab, index) => {
             this.isAvailable(index) 
                 ? (tab.button.classList.add('available'), tab.button.classList.remove('unavailable'))

@@ -1,7 +1,7 @@
 let input = (label, name, placeholder) => `
     <div class="input-div input_label-div d-flex flex-column flex-nowrap">
         <label>${label}</label>
-        <input type="text" name=${name} oninput="controller.validator.change(controller._tabRenderer._currentTab)" class="form-control w-100" placeholder=${placeholder}>
+        <input type="text" ${label === "Age" && 'readonly="readonly"'} name=${name} oninput="controller.validator.change(controller._tabRenderer._currentTab)" class="form-control w-100" placeholder=${placeholder}>
     </div>
 `;
 
