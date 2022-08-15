@@ -1,0 +1,135 @@
+body {
+  font-family: "nunito";
+  width: 100vw;
+  height: 100vh;
+}
+
+main {
+  width: 83.7925%;
+  margin-top: 5.3735vh;
+}
+main h1 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  white-space: nowrap;
+  font-family: "Inter";
+  align-self: flex-start;
+  height: 7.0773vh;
+  width: 38.5737vw;
+}
+main .btn-group {
+  margin-top: 2.3591vh;
+}
+main .btn-group button {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  height: 5.7667vh;
+  background-color: white;
+  border: none;
+}
+main .btn-group .available {
+  color: #074EE8;
+  border-bottom: 2px solid #074EE8;
+}
+main .btn-group .unavailable {
+  color: #767676;
+}
+main .btn-group .return {
+  border-bottom: 2px solid #074EE8;
+}
+main .input-div {
+  color: #767676;
+}
+main .input-div label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+}
+main .input-div input {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  width: 83.4683vw;
+  height: 5.2424vh;
+}
+main .input-div:focus-within {
+  color: black;
+}
+main .formContainer-div {
+  height: 56.8807vh;
+  margin-top: 4.5871vh;
+  margin-bottom: 4.8492vh;
+}
+main .formContainer-div .input-div:nth-child(1) {
+  margin-bottom: 4.456vh;
+}
+main .formContainer-div .input-div:nth-child(2) {
+  margin-bottom: 3.6697vh;
+}
+main .formContainer-div .emailPhone-container .input-div:nth-child(1) {
+  width: 63.8297%;
+}
+main .formContainer-div .emailPhone-container .input-div:nth-child(2) {
+  width: 31.3346%;
+}
+main .formContainer-div .birthday-container {
+  margin-bottom: 5.3735vh;
+}
+main .formContainer-div .birthday-container span {
+  margin-bottom: 1.8348vh;
+}
+main .formContainer-div .birthday-container .select-div {
+  width: 18.6385vw;
+}
+main .formContainer-div .birthday-container .input-div {
+  width: 16.3695vw;
+}
+main .formContainer-div .birthday-container select, main .formContainer-div .birthday-container input {
+  height: 5.2424vh;
+}
+main .formContainer-div .checkbox-div {
+  white-space: nowrap;
+  height: 3.6697vh;
+}
+main .formContainer-div .checkbox-div input {
+  height: 20px;
+  width: 20px;
+}
+main .formContainer-div .checkbox-div label {
+  margin-left: 1.2965vw;
+}
+main .formContainer-div .unavailable {
+  display: none;
+}
+main .next-btn {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  height: 5.2424vh;
+}
+main .next-btn img {
+  margin-left: 2.0664vw;
+}
+
+.userSelector {
+  margin-bottom: 2rem;
+}
+
+tr th:nth-child(1) {
+  text-align: left;
+  width: 40%;
+}
+tr th:nth-child(2) {
+  text-align: left;
+  width: 60%;
+}
+
+.finish-icon {
+  margin-right: 1.4586vw;
+}
+
+.form2 .input-div {
+  margin-bottom: 4.325vh !important;
+}/*# sourceMappingURL=styles.css.map */

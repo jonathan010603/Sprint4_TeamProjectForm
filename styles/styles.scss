@@ -1,0 +1,144 @@
+@import './variables';
+
+@mixin font($fs, $fw, $lh) {
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+}
+
+body {
+    font-family: "nunito";
+    width: 100vw;
+    height: 100vh;
+}
+
+main {
+    width: 83.7925%;
+    margin-top: 5.3735vh;
+
+    h1 {
+        @include font(18px, 600, 24px);
+        white-space: nowrap;
+        font-family: 'Inter';
+        align-self: flex-start;
+        height: 7.0773vh;
+        width: 38.5737vw;
+    }
+
+    .btn-group {
+        margin-top: 2.3591vh;
+        button { 
+            @include font(16px, 400, 18px);
+            height: 5.7667vh;
+            background-color: white;
+            border: none;
+        }
+
+        .available {
+            color: $primary;
+            border-bottom: 2px solid $primary;
+        }
+
+        .unavailable {
+            color: $text_subtle;
+        }
+
+        .return {
+            border-bottom: 2px solid $primary;
+        }
+    }
+
+    .input-div {
+        label { @include font(14px, 400, 16px); }
+        input {
+            @include font(16px, 400, 18px);
+            width: 83.4683vw;
+            height: 5.2424vh;
+        }
+
+        color: $text_subtle;
+        &:focus-within {
+            color: black;
+        }
+    }
+
+    .formContainer-div {
+        height: 56.8807vh;
+        margin-top: 4.5871vh;
+        margin-bottom: 4.8492vh;
+
+        .input-div {    
+            &:nth-child(1) { margin-bottom: 4.4560vh; }
+            &:nth-child(2) { margin-bottom: 3.6697vh; }
+        }
+    
+        .emailPhone-container {
+            .input-div:nth-child(1) { width: 63.8297%; }
+            .input-div:nth-child(2) { width: 31.3346%; }
+        }
+    
+        .birthday-container {
+            margin-bottom: 5.3735vh;
+            span { margin-bottom: 1.8348vh; }
+            .select-div { width: 18.6385vw; }
+            .input-div { width: 16.3695vw; }
+
+            select, input {
+                height: 5.2424vh;
+            }
+
+            .birthday-group {
+                
+            }
+        }
+
+        .checkbox-div {
+            white-space: nowrap;
+            height: 3.6697vh;
+            input { 
+                height: 20px;
+                width: 20px;
+            }
+            label { margin-left: 1.2965vw; }
+        }
+
+        .unavailable {
+            display: none;
+        }
+    }
+
+    .next-btn {
+        @include font(16px, 400, 18px);
+        height: 5.2424vh;
+
+        img { margin-left: 2.0664vw; }
+    }
+}
+
+.userSelector {
+    margin-bottom: 2rem;
+}
+
+tr {
+    th {
+        &:nth-child(1) {
+            text-align: left;
+            width: 40%;
+        }
+        
+        &:nth-child(2) {
+            text-align: left;
+            width: 60%;
+        }
+    }
+}
+
+.finish-icon {
+    margin-right: 1.4586vw;
+}
+
+.form2 {
+    .input-div {
+        margin-bottom: 4.3250vh !important;
+    }
+}
