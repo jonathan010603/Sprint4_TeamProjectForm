@@ -4,8 +4,8 @@ class Controller {
         this._tabRenderer.setAvailable(0, true);
         this._tabRenderer.updateButtons();
         this._tabRenderer.render(0);
-        this._validator = new Validator();
-        this._userRenderer = new UserRenderer();
+        this.validator = new Validator();
+        this.userRenderer = new UserRenderer();
         //document.querySelector('main').innerHTML = user_list_layout();
     }
 
@@ -34,14 +34,8 @@ class Controller {
         //console.log(JSON.parse(window.localStorage.getItem('User 1')).github);
     }
     
-    form_return () {
-        document.querySelector('body').innerHTML = this.render_initial();
-        this._tabRenderer.setAvailable(2, false);
-        this._tabRenderer.setAvailable(1, false);
-        this._tabRenderer.setAvailable(0, true);
-        this._tabRenderer.updateButtons();
-        this._tabRenderer.render(0);
-        this.validator = new Validator();
+    new_user () {
+        location.reload();
     }
 
 }

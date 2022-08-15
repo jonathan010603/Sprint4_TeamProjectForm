@@ -23,7 +23,7 @@ let checkbox = (label, name) => `
 `;
 
 let moreButton = () => `
-    <button onclick="controller.validator.change(controller._tabRenderer._currentTab)" class="btn btn-primary align-self-end">More</button>
+    <button onclick="" class="btn btn-primary align-self-end">More</button>
 `;
 
 let thead = (label, field_value) => `
@@ -54,7 +54,7 @@ let user_list_layout = () => `
 
         <table class="certificate table">
         </table>
-        <button class="next-btn btn btn-primary align-self-end d-flex align-items-center" onclick="controller.form_return()">
+        <button class="next-btn btn btn-primary align-self-end d-flex align-items-center" onclick="controller.new_user()">
             New User<img src="./icons/next.svg" class="">
         </button>
     </div>
