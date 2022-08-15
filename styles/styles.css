@@ -111,6 +111,7 @@ main .next-btn {
 }
 main .next-btn img {
   margin-left: 2.0664vw;
+<<<<<<< HEAD
 }
 
 .userSelector {
@@ -132,4 +133,6 @@ tr th:nth-child(2) {
 
 .form2 .input-div {
   margin-bottom: 4.325vh !important;
+=======
+>>>>>>> 8e1fc00632a5238c2ba8ae8dd238e9565d228b65
 }/*# sourceMappingURL=styles.css.map */
