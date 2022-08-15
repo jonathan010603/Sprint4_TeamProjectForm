@@ -103,7 +103,7 @@ main {
         }
 
         .unavailable {
-            display: none;
+            display: none !important;
         }
     }
 
@@ -112,6 +112,35 @@ main {
         height: 5.2424vh;
 
         img { margin-left: 2.0664vw; }
+    }
+
+    .form2 {
+        .input-div {
+            margin-bottom: 2.3591vh !important;
+        }
+    
+        .full {
+            display: none!important
+        }
+    
+        .cert_input {
+            height: 4vh;
+            margin-bottom: 2.3591vh !important;
+        }
+    
+        .cert_div {
+            background-color: $primary;
+            margin-bottom: 2.3591vh !important;
+            
+            input {
+                margin: 0 !important;
+                border-radius: 0;
+            }
+    
+            img {
+                
+            }
+        }
     }
 }
 
@@ -135,33 +164,4 @@ tr {
 
 .finish-icon {
     margin-right: 1.4586vw;
-}
-
-.form2 {
-    .input-div {
-        margin-bottom: 2.3591vh !important;
-    }
-
-    .full {
-        display: none!important
-    }
-
-    .cert_input {
-        height: 4vh;
-        margin-bottom: 2.3591vh !important;
-    }
-
-    .cert_div {
-        background-color: $primary;
-        margin-bottom: 2.3591vh !important;
-        
-        input {
-            margin: 0 !important;
-            border-radius: 0;
-        }
-
-        img {
-            
-        }
-    }
 }

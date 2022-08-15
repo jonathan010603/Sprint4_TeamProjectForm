@@ -101,7 +101,7 @@ main .formContainer-div .checkbox-div label {
   margin-left: 1.2965vw;
 }
 main .formContainer-div .unavailable {
-  display: none;
+  display: none !important;
 }
 main .next-btn {
   font-size: 16px;
@@ -112,7 +112,24 @@ main .next-btn {
 main .next-btn img {
   margin-left: 2.0664vw;
 }
-
+main .form2 .input-div {
+  margin-bottom: 2.3591vh !important;
+}
+main .form2 .full {
+  display: none !important;
+}
+main .form2 .cert_input {
+  height: 4vh;
+  margin-bottom: 2.3591vh !important;
+}
+main .form2 .cert_div {
+  background-color: #074EE8;
+  margin-bottom: 2.3591vh !important;
+}
+main .form2 .cert_div input {
+  margin: 0 !important;
+  border-radius: 0;
+}
 .userSelector {
   margin-bottom: 2rem;
 }
@@ -128,23 +145,4 @@ tr th:nth-child(2) {
 
 .finish-icon {
   margin-right: 1.4586vw;
-}
-
-.form2 .input-div {
-  margin-bottom: 2.3591vh !important;
-}
-.form2 .full {
-  display: none !important;
-}
-.form2 .cert_input {
-  height: 4vh;
-  margin-bottom: 2.3591vh !important;
-}
-.form2 .cert_div {
-  background-color: #074EE8;
-  margin-bottom: 2.3591vh !important;
-}
-.form2 .cert_div input {
-  margin: 0 !important;
-  border-radius: 0;
 }/*# sourceMappingURL=styles.css.map */

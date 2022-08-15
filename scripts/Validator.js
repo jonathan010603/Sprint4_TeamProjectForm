@@ -50,9 +50,6 @@ class Validator {
         }
 
         this.age_calc();
-        
-        console.log(this._userInput)
-        console.log("Current tab is " + controller._tabRenderer._currentTab)
         if(!this.validateFields (i)) return controller._tabRenderer.setCompleted(i, false);
         controller._tabRenderer.setCompleted(i, true);
     }
