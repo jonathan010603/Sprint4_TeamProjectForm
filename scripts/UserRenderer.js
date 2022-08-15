@@ -19,7 +19,7 @@ class UserRenderer {
         `
 
         document.querySelector('.certificate').innerHTML = `
-            ${thead('Certificates:', JSON.parse(window.localStorage.getItem(user.value)).fullName)}
+            ${thead('Certificates:', "")}
             ${thead('Team Name:', JSON.parse(window.localStorage.getItem(user.value)).teamName)}
             ${thead('Institution:', JSON.parse(window.localStorage.getItem(user.value)).institution)}
             ${thead('Graduation:', JSON.parse(window.localStorage.getItem(user.value)).graduation)}

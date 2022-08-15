@@ -3,7 +3,7 @@ class Controller {
         this._tabRenderer = new TabRenderer();
         this._tabRenderer.setAvailable(0, true);
         this._tabRenderer.updateButtons();
-        this._tabRenderer.render(2);
+        this._tabRenderer.render(0);
         this.validator = new Validator();
         this.userRenderer = new UserRenderer();
         //document.querySelector('main').innerHTML = user_list_layout();
@@ -47,8 +47,6 @@ class Controller {
             return;
         }
 
-        // Próximo passo - Voltar com o botão quando tiver menos de 5
-
         let cert = document.querySelector('[name="certificates"]').value
         let wrapper = document.querySelector('.cert_wrapper');
             
@@ -76,7 +74,16 @@ class Controller {
     }
     
     delete (i) {
+        let input_div = document.querySelector('.inputCert_container')
+        let moreButton = document.querySelector('.moreButton');
+
+        this.validator.certificates.length < 7 && (
+            input_div.classList.remove('full'),
+            moreButton.classList.remove('full')
+        )
+
         console.log(`Deleting ${i}`)
+        this.validator.certificates.splice(i, 1)
         document.querySelector(`.certificate_${i}-div`).remove();
     }
 
