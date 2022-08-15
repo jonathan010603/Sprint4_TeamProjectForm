@@ -111,7 +111,6 @@ main .next-btn {
 }
 main .next-btn img {
   margin-left: 2.0664vw;
-<<<<<<< HEAD
 }
 
 .userSelector {
@@ -132,7 +131,20 @@ tr th:nth-child(2) {
 }
 
 .form2 .input-div {
-  margin-bottom: 4.325vh !important;
-=======
->>>>>>> 8e1fc00632a5238c2ba8ae8dd238e9565d228b65
+  margin-bottom: 2.3591vh !important;
+}
+.form2 .full {
+  display: none !important;
+}
+.form2 .cert_input {
+  height: 4vh;
+  margin-bottom: 2.3591vh !important;
+}
+.form2 .cert_div {
+  background-color: #074EE8;
+  margin-bottom: 2.3591vh !important;
+}
+.form2 .cert_div input {
+  margin: 0 !important;
+  border-radius: 0;
 }/*# sourceMappingURL=styles.css.map */

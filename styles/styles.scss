@@ -113,7 +113,6 @@ main {
 
         img { margin-left: 2.0664vw; }
     }
-<<<<<<< HEAD
 }
 
 .userSelector {
@@ -140,8 +139,29 @@ tr {
 
 .form2 {
     .input-div {
-        margin-bottom: 4.3250vh !important;
+        margin-bottom: 2.3591vh !important;
     }
-=======
->>>>>>> 8e1fc00632a5238c2ba8ae8dd238e9565d228b65
+
+    .full {
+        display: none!important
+    }
+
+    .cert_input {
+        height: 4vh;
+        margin-bottom: 2.3591vh !important;
+    }
+
+    .cert_div {
+        background-color: $primary;
+        margin-bottom: 2.3591vh !important;
+        
+        input {
+            margin: 0 !important;
+            border-radius: 0;
+        }
+
+        img {
+            
+        }
+    }
 }

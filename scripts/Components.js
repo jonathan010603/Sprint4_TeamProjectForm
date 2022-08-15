@@ -23,7 +23,9 @@ let checkbox = (label, name) => `
 `;
 
 let moreButton = () => `
-    <button onclick="" class="btn btn-primary align-self-end">More</button>
+    <button type="button" class="moreButton btn btn-primary align-self-end d-flex align-items-center" onclick="controller.moreButton_clicked()">
+        <img src="./icons/plus.svg" class="">More<img src="./icons/next.svg" class="">
+    </button>
 `;
 
 let thead = (label, field_value) => `
@@ -58,4 +60,10 @@ let user_list_layout = () => `
             New User<img src="./icons/next.svg" class="">
         </button>
     </div>
+`
+
+let certificate = (i) => `
+    <input class="cert_input form-control w-100 h-100" readonly="readonly" name="certificate ${controller.validator.certificates.length - 2}" value=${document.querySelector('[name="certificates"]').value}>
+    <img src="./icons/edit.svg" class="" onclick="controller.edit(${i})">
+    <img src="./icons/delete.svg" class="" onclick="controller.delete(${i})">
 `

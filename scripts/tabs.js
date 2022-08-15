@@ -55,11 +55,14 @@ const tabs = [
         completed: false,
         available: false,
         html: 
-            `<form class="form2">
-                <div>
-                    ${input('Certificates', 'certificates', 'https://www.linkedin.com/in/foo-bar-3a0560104/')}
-                    ${moreButton()}
+            `<form class="form2 d-flex flex-column">
+                <div class="cert_wrapper">
+                    <div class="inputCert_container input-div input_label-div d-flex flex-column flex-nowrap">
+                        <label>Certificates</label>
+                        <input type="text" name="certificates" oninput="controller.validator.change(controller._tabRenderer._currentTab)" class="form-control w-100" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
+                    </div>
                 </div>
+                    ${moreButton()}
                 ${input('Team Name *', 'teamName', 'fooTeam')}
                 ${input('Institution *', 'institution', 'Universidade Federal da Paraíba')}
                 ${input('Graduation *', 'graduation', 'Ciências da Computação')}

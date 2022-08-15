@@ -6,6 +6,7 @@ class Validator {
         this.email_reg = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         this.let_spc_und = /^[A-Za-z0-9\s_]*$/;
         this.let_spc = /^[a-zA-Z\s]*$/; 
+        this.certificates = [''];
         this._userInput = {
             fullName: '',
             nickName: '',
@@ -20,7 +21,8 @@ class Validator {
             github: '',
             teamName: '',
             institution: '',
-            graduation: ''
+            graduation: '',
+            certificates: ['']
         }
     }
 
@@ -44,6 +46,7 @@ class Validator {
             teamName: document.querySelector('[name="teamName"]').value,
             institution: document.querySelector('[name="institution"]').value,
             graduation: document.querySelector('[name="graduation"]').value,
+            certificates: this.certificates
         }
 
         this.age_calc();
