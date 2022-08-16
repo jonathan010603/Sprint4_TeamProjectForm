@@ -15,7 +15,7 @@ body {
 main {
     width: 83.7925%;
     margin-top: 5.3735vh;
-
+    
     h1 {
         @include font(18px, 600, 24px);
         white-space: nowrap;
@@ -34,12 +34,12 @@ main {
             border: none;
         }
 
-        .available {
+        .unlocked {
             color: $primary;
             border-bottom: 2px solid $primary;
         }
 
-        .unavailable {
+        .locked {
             color: $text_subtle;
         }
 
@@ -86,10 +86,6 @@ main {
             select, input {
                 height: 5.2424vh;
             }
-
-            .birthday-group {
-                
-            }
         }
 
         .checkbox-div {
@@ -100,10 +96,6 @@ main {
                 width: 20px;
             }
             label { margin-left: 1.2965vw; }
-        }
-
-        .unavailable {
-            display: none !important;
         }
     }
 
@@ -127,18 +119,46 @@ main {
             height: 4vh;
             margin-bottom: 2.3591vh !important;
         }
-    
-        .cert_div {
-            background-color: $primary;
-            margin-bottom: 2.3591vh !important;
-            
-            input {
-                margin: 0 !important;
-                border-radius: 0;
-            }
-    
+
+        .moreButton {
             img {
-                
+                &:nth-child(1) {
+                    margin-right: 2.0664vw;
+                }
+                &:nth-child(2) {
+                    margin-left: 2.0664vw;
+                }
+            }
+        }
+
+        .inputCert_img-group, .selectedCert_container {
+            border: 2px solid $border-subtle;
+
+            #fav_trigger, #fav_trigger_selected {
+                display: none;
+
+                &:checked + label > img {
+                    background-color: red;
+                }
+            }
+
+            input {
+                outline: none !important;
+                border: none;
+            }
+
+            img {
+                width: 16px;
+                height: 27px;
+                margin-right: 7px;
+            }
+        }
+
+        .dropdown_button-group {
+            margin-bottom: 6.2909vh !important;
+
+            .selectedCert_container {
+                width: 60%;
             }
         }
     }
@@ -164,4 +184,8 @@ tr {
 
 .finish-icon {
     margin-right: 1.4586vw;
+}
+
+.unavailable {
+    display: none !important;
 }

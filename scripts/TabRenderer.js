@@ -1,7 +1,6 @@
 class TabRenderer {
     constructor () {
-        this._currentTab = 0;
-
+        this.currentTab = 0;
         this.container = document.querySelector('.formContainer-div');
 
         this.tabs_forms = [
@@ -9,22 +8,14 @@ class TabRenderer {
             {form: document.querySelector('.form1')},
             {form: document.querySelector('.form2')}
         ]
-        
-        this.tabs_buttons = [
+
+        this.tabs_navButtons = [
             {button: document.querySelector('.tab1-btn')},
             {button: document.querySelector('.tab2-btn')},
             {button: document.querySelector('.tab3-btn')}
         ]
 
         this.container.innerHTML = tabs[0].html + tabs[1].html + tabs[2].html;
-    }
-
-    get currentTab () {
-        return (0 + this._currentTab);
-    }
-    
-    set currentTab (i) {
-        this._currentTab = i;
     }
 
     isAvailable (i) {
@@ -35,55 +26,43 @@ class TabRenderer {
         return tabs[i].completed === true;
     }
 
-    setCompleted (i, bool) {
-        tabs[i].completed = bool;
-        this.updateButtons();
-    }
-
     setAvailable (i, bool) {
         tabs[i].available = bool;
         this.updateButtons();
     }
 
+    setCompleted (i, bool) {
+        tabs[i].completed = bool;
+        this.updateButtons();
+    }
+
     updateButtons () {
-        if (this.isCompleted(0)) {
-            tabs[1].available = true;
+        this.isCompleted(0) 
+            ? ( tabs[1].available = true,
+                this.isCompleted(1)
+                    ? tabs[2].available = true
+                    : tabs[2].available = false )
 
-            this.isCompleted(1)
-                ? tabs[2].available = true
-                : tabs[2].available = false
-        }
+            : ( tabs[1].available = false, tabs[2].available = false );
 
-        else { 
-            tabs[1].available = false 
-            tabs[2].available = false 
-        }
-
-        this.tabs_buttons.map((tab, index) => {
+        this.tabs_navButtons.map((tab, index) => {
             this.isAvailable(index) 
-                ? (tab.button.classList.add('available'), tab.button.classList.remove('unavailable'))
-                : (tab.button.classList.remove('available'), tab.button.classList.add('unavailable'))
-        })
+                ? (tab.button.classList.add('unlocked'), tab.button.classList.remove('locked'))
+                : (tab.button.classList.remove('unlocked'), tab.button.classList.add('locked'))
+        });
     }
 
     render (i) {
-        this._currentTab = i;
-        this._currentTab === 2 && (
-            document.querySelector('.next-btn').innerHTML = `
-                <img src="./icons/complete.svg" class="finish-icon">Finish
-            `);
+        this.currentTab = i;
+        this.currentTab === 2 && (
+            document.querySelector('.nextButton').innerHTML = `<img src="./icons/complete.svg" class="finish-icon">Finish`
+        );
 
         for (let index = 0; index <= 2; index++) {
             let form = document.querySelector(`.form${index}`)
-            switch(form) {
-                case document.querySelector(`.form${i}`):
-                    form.classList.remove('unavailable');
-                    break;
-
-                default:
-                    form.classList.add('unavailable');
-                    break;
-            }
+            form === document.querySelector(`.form${i}`)
+                ? form.classList.remove('unavailable')
+                : form.classList.add('unavailable')
         }
     }
 }

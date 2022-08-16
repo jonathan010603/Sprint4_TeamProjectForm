@@ -29,11 +29,11 @@ main .btn-group button {
   background-color: white;
   border: none;
 }
-main .btn-group .available {
+main .btn-group .unlocked {
   color: #074EE8;
   border-bottom: 2px solid #074EE8;
 }
-main .btn-group .unavailable {
+main .btn-group .locked {
   color: #767676;
 }
 main .btn-group .return {
@@ -100,9 +100,6 @@ main .formContainer-div .checkbox-div input {
 main .formContainer-div .checkbox-div label {
   margin-left: 1.2965vw;
 }
-main .formContainer-div .unavailable {
-  display: none !important;
-}
 main .next-btn {
   font-size: 16px;
   font-weight: 400;
@@ -122,14 +119,37 @@ main .form2 .cert_input {
   height: 4vh;
   margin-bottom: 2.3591vh !important;
 }
-main .form2 .cert_div {
-  background-color: #074EE8;
-  margin-bottom: 2.3591vh !important;
+main .form2 .moreButton img:nth-child(1) {
+  margin-right: 2.0664vw;
 }
-main .form2 .cert_div input {
-  margin: 0 !important;
-  border-radius: 0;
+main .form2 .moreButton img:nth-child(2) {
+  margin-left: 2.0664vw;
 }
+main .form2 .inputCert_img-group, main .form2 .selectedCert_container {
+  border: 2px solid #AAAAAA;
+}
+main .form2 .inputCert_img-group #fav_trigger, main .form2 .inputCert_img-group #fav_trigger_selected, main .form2 .selectedCert_container #fav_trigger, main .form2 .selectedCert_container #fav_trigger_selected {
+  display: none;
+}
+main .form2 .inputCert_img-group #fav_trigger:checked + label > img, main .form2 .inputCert_img-group #fav_trigger_selected:checked + label > img, main .form2 .selectedCert_container #fav_trigger:checked + label > img, main .form2 .selectedCert_container #fav_trigger_selected:checked + label > img {
+  background-color: red;
+}
+main .form2 .inputCert_img-group input, main .form2 .selectedCert_container input {
+  outline: none !important;
+  border: none;
+}
+main .form2 .inputCert_img-group img, main .form2 .selectedCert_container img {
+  width: 16px;
+  height: 27px;
+  margin-right: 7px;
+}
+main .form2 .dropdown_button-group {
+  margin-bottom: 6.2909vh !important;
+}
+main .form2 .dropdown_button-group .selectedCert_container {
+  width: 60%;
+}
+
 .userSelector {
   margin-bottom: 2rem;
 }
@@ -145,4 +165,8 @@ tr th:nth-child(2) {
 
 .finish-icon {
   margin-right: 1.4586vw;
+}
+
+.unavailable {
+  display: none !important;
 }/*# sourceMappingURL=styles.css.map */

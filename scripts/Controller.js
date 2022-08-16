@@ -1,90 +1,65 @@
 class Controller {
     constructor () {
-        this._tabRenderer = new TabRenderer();
-        this._tabRenderer.setAvailable(0, true);
-        this._tabRenderer.updateButtons();
-        this._tabRenderer.render(0);
+        this.tabRenderer = new TabRenderer();
+        this.tabRenderer.setAvailable(0, true);
+        this.tabRenderer.updateButtons();
+        this.tabRenderer.render(0);
         this.validator = new Validator();
         this.userRenderer = new UserRenderer();
-        //document.querySelector('main').innerHTML = user_list_layout();
     }
 
-    tabButton_clicked (i) {
-        if (!this._tabRenderer.isAvailable(i) || this._tabRenderer._currentTab === i) return;
-        this._tabRenderer.render(i);
+    navButton_clicked (i) {
+        if (!this.tabRenderer.isAvailable(i) || this.tabRenderer.currentTab === i) return;
+        this.tabRenderer.render(0);
     }
 
     nextButton_clicked () {
-        let nextTab = this._tabRenderer._currentTab + 1;
-        let current = this._tabRenderer._currentTab;
+        let nextTab = this.tabRenderer.currentTab + 1;
+        let current = this.tabRenderer.currentTab;
 
         if (current === 2) {
             if(!tabs[2].completed === true) return;
             return this.finish();
         }
-        if (!this._tabRenderer.isAvailable(nextTab)) return;
-        this._tabRenderer.render(nextTab);
-        this._tabRenderer._currentTab = nextTab;
+        if (!this.tabRenderer.isAvailable(nextTab)) return;
+        this.tabRenderer.render(nextTab);
+        this.tabRenderer.currentTab = nextTab;
     }
 
     moreButton_clicked () {
-        let cert_array = this.validator.certificates;
-        let input_div = document.querySelector('.inputCert_container')
-        let moreButton = document.querySelector('.moreButton');
+        if (this.validator.validateCertificates() === false) return;
+        let selected_array = this.validator.selectedCertificates;
+        let cert = document.querySelector('[name="certificates_input"]').value;
 
-        if(cert_array.length === 5) {
-            let cert = document.querySelector('[name="certificates"]').value
-            let wrapper = document.querySelector('.cert_wrapper');
-            
-            cert_array.push(cert);
-            let new_cert =  document.createElement('div');
-            new_cert.classList.add(`certificate_${cert_array.length - 2}-div`, 'cert_div', 'd-flex', 'justify-content-between');
-            new_cert.innerHTML = certificate(cert_array.length - 2);
-            wrapper.appendChild(new_cert)
-
-            input_div.classList.add('full');
-            moreButton.classList.add('full');
-            return;
+        let cert_obj = {
+            fav: document.querySelector('#fav_trigger').checked,
+            data: cert,
+            id: this.validator.selectedCertificates.length
         }
+        
+        selected_array.push(cert_obj);
+        
+        this.validator.updateSelectedCerts();
+        this.validator.updateCertDropdown();
 
-        let cert = document.querySelector('[name="certificates"]').value
-        let wrapper = document.querySelector('.cert_wrapper');
-            
-        cert_array.push(cert);
-        let new_cert =  document.createElement('div');
-        new_cert.classList.add(`certificate_${cert_array.length - 2}-div`, 'cert_div', 'd-flex', 'justify-content-between');
-        new_cert.innerHTML = certificate(cert_array.length - 2);
-        wrapper.appendChild(new_cert);
-        document.querySelector('[name="certificates"]').value = "";
+        if (selected_array.length === 1)
+            return document.querySelector('.selectedCert_container').classList.remove('unavailable');
+
+        if (selected_array.length === 5)
+            return document.querySelector('.moreButton').classList.add('unavailable');
+        
+        this.validator.checkFavs();
     }
 
     finish () {
-        window.localStorage.setItem(`User ${Object.keys(localStorage).length + 1}`, JSON.stringify(this.validator._userInput))
-        document.querySelector('main').innerHTML = user_list_layout();
+        window.localStorage.setItem(`User ${Object.keys(localStorage).length + 1}`, JSON.stringify(this.validator.userInput))
+        document.querySelector('main').innerHTML = userRenderer.user_list();
         this.userRenderer.insertData();
+        console.log(this.validator.userInput)
         //console.log(JSON.parse(window.localStorage.getItem('User 1')).github);
     }
     
     new_user () {
         location.reload();
     }
-
-    edit (i) {
-        console.log(`Editing ${i}`)
-    }
-    
-    delete (i) {
-        let input_div = document.querySelector('.inputCert_container')
-        let moreButton = document.querySelector('.moreButton');
-
-        this.validator.certificates.length < 7 && (
-            input_div.classList.remove('full'),
-            moreButton.classList.remove('full')
-        )
-
-        console.log(`Deleting ${i}`)
-        this.validator.certificates.splice(i, 1)
-        document.querySelector(`.certificate_${i}-div`).remove();
-    }
-
 }
