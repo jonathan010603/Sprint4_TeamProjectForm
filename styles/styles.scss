@@ -13,6 +13,11 @@ body {
 }
 
 main {
+
+    img {
+        cursor: pointer;
+    }
+
     width: 83.7925%;
     margin-top: 5.3735vh;
     
@@ -41,10 +46,6 @@ main {
 
         .locked {
             color: $text_subtle;
-        }
-
-        .return {
-            border-bottom: 2px solid $primary;
         }
     }
 
@@ -138,7 +139,7 @@ main {
                 display: none;
 
                 &:checked + label > img {
-                    background-color: red;
+                    filter: invert(55%) sepia(14%) saturate(23) hue-rotate(-45deg) brightness(119%) contrast(86%);
                 }
             }
 
@@ -162,24 +163,24 @@ main {
             }
         }
     }
-}
 
-tr {
-    th {
-        &:nth-child(1) {
-            text-align: left;
-            width: 40%;
-        }
-        
-        &:nth-child(2) {
-            text-align: left;
-            width: 60%;
+    tr {
+        th {
+            &:nth-child(1) {
+                text-align: left;
+                width: 40%;
+            }
+            
+            &:nth-child(2) {
+                text-align: left;
+                width: 60%;
+            }
         }
     }
-}
-
-.finish-icon {
-    margin-right: 1.4586vw;
+    
+    .finish-icon {
+        margin-right: 1.4586vw;
+    }
 }
 
 .unavailable {

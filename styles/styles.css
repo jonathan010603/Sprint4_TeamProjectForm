@@ -8,6 +8,9 @@ main {
   width: 83.7925%;
   margin-top: 5.3735vh;
 }
+main img {
+  cursor: pointer;
+}
 main h1 {
   font-size: 18px;
   font-weight: 600;
@@ -35,9 +38,6 @@ main .btn-group .unlocked {
 }
 main .btn-group .locked {
   color: #767676;
-}
-main .btn-group .return {
-  border-bottom: 2px solid #074EE8;
 }
 main .input-div {
   color: #767676;
@@ -132,7 +132,7 @@ main .form2 .inputCert_img-group #fav_trigger, main .form2 .inputCert_img-group 
   display: none;
 }
 main .form2 .inputCert_img-group #fav_trigger:checked + label > img, main .form2 .inputCert_img-group #fav_trigger_selected:checked + label > img, main .form2 .selectedCert_container #fav_trigger:checked + label > img, main .form2 .selectedCert_container #fav_trigger_selected:checked + label > img {
-  background-color: red;
+  filter: invert(55%) sepia(14%) saturate(23) hue-rotate(-45deg) brightness(119%) contrast(86%);
 }
 main .form2 .inputCert_img-group input, main .form2 .selectedCert_container input {
   outline: none !important;
@@ -149,17 +149,15 @@ main .form2 .dropdown_button-group {
 main .form2 .dropdown_button-group .selectedCert_container {
   width: 60%;
 }
-
-tr th:nth-child(1) {
+main tr th:nth-child(1) {
   text-align: left;
   width: 40%;
 }
-tr th:nth-child(2) {
+main tr th:nth-child(2) {
   text-align: left;
   width: 60%;
 }
-
-.finish-icon {
+main .finish-icon {
   margin-right: 1.4586vw;
 }
 
