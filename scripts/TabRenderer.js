@@ -54,9 +54,9 @@ class TabRenderer {
 
     render (i) {
         this.currentTab = i;
-        this.currentTab === 2 && (
-            document.querySelector('.nextButton').innerHTML = `<img src="./icons/complete.svg" class="finish-icon">Finish`
-        );
+        this.currentTab === 2
+            ? document.querySelector('.nextButton').innerHTML = `<img src="./icons/complete.svg" class="finish-icon">Finish`
+            : document.querySelector('.nextButton').innerHTML = `Next<img src="./icons/next.svg" class="">`
 
         for (let index = 0; index <= 2; index++) {
             let form = document.querySelector(`.form${index}`)

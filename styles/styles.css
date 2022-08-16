@@ -150,10 +150,6 @@ main .form2 .dropdown_button-group .selectedCert_container {
   width: 60%;
 }
 
-.userSelector {
-  margin-bottom: 2rem;
-}
-
 tr th:nth-child(1) {
   text-align: left;
   width: 40%;

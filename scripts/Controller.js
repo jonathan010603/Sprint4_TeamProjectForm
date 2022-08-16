@@ -10,7 +10,7 @@ class Controller {
 
     navButton_clicked (i) {
         if (!this.tabRenderer.isAvailable(i) || this.tabRenderer.currentTab === i) return;
-        this.tabRenderer.render(0);
+        this.tabRenderer.render(i);
     }
 
     nextButton_clicked () {
@@ -18,8 +18,7 @@ class Controller {
         let current = this.tabRenderer.currentTab;
 
         if (current === 2) {
-            if(!tabs[2].completed === true) return;
-            return this.finish();
+            if(!tabs[2].completed === true) return this.finish();
         }
         if (!this.tabRenderer.isAvailable(nextTab)) return;
         this.tabRenderer.render(nextTab);
@@ -53,10 +52,9 @@ class Controller {
 
     finish () {
         window.localStorage.setItem(`User ${Object.keys(localStorage).length + 1}`, JSON.stringify(this.validator.userInput))
-        document.querySelector('main').innerHTML = userRenderer.user_list();
+        alert(`User ${Object.keys(localStorage).length} registered successfully!`)
+        document.querySelector('main').innerHTML = this.userRenderer.user_list();
         this.userRenderer.insertData();
-        console.log(this.validator.userInput)
-        //console.log(JSON.parse(window.localStorage.getItem('User 1')).github);
     }
     
     new_user () {

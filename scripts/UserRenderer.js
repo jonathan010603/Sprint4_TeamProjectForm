@@ -19,7 +19,7 @@ class UserRenderer {
     `}
 
     user_list () { return `
-        <div class="d-flex flex-column justify-content-between w-100 h-100 unavailable">
+        <div class="d-flex flex-column justify-content-between w-100 h-100">
             ${this.userListDropdown('selectedUser')}
             <table class="basic table">
             </table>
@@ -51,17 +51,21 @@ class UserRenderer {
         `
 
         document.querySelector('.certificate').innerHTML = `
-            ${this.tableRow('Certificates:', getCertificates(user))}
+            ${this.tableRow('Certificates:', this.getCertificates(user.value))}
             ${this.tableRow('Team Name:', JSON.parse(window.localStorage.getItem(user.value)).teamName)}
             ${this.tableRow('Institution:', JSON.parse(window.localStorage.getItem(user.value)).institution)}
             ${this.tableRow('Graduation:', JSON.parse(window.localStorage.getItem(user.value)).graduation)}
         `
-    }
+    } 
 
     getCertificates (user) {
-        let certificatesArray = JSON.parse(window.localStorage.getItem(user.value)).certificates;
+        let certificatesArray = JSON.parse(window.localStorage.getItem(user)).certificates;
+        let certificate_renderer = document.createElement('div');
         certificatesArray.map(certificate => {
-            return console.log(certificate.data)
+            let cert_span = document.createElement('span');
+            cert_span.innerHTML = `${certificate.data}`;
+            certificate_renderer.appendChild(cert_span);
         })
+        return `<div class="d-flex flex-column align-items-start">${certificate_renderer.innerHTML}</div>`;
     }
 }

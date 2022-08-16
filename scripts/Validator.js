@@ -46,7 +46,7 @@ class Validator {
 
     validateFields (i) {
         //url_reg = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
-        let linkedin_reg = /^(http(s?):\/\/)?(www\.)?linkedin\.([a-z])+\/([A-Za-z0-9]{1,})+\/?$/i;
+        let linkedin_reg = /^(http(s)?:\/\/)?([\w]+\.)?linkedin\.com\/(pub|in|profile)/gm;
         let github_reg = /^(http(s?):\/\/)?(www\.)?github\.([a-z])+\/([A-Za-z0-9]{1,})+\/?$/i;
         let email_reg = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         let let_spc_und_reg = /^[A-Za-z0-9\s_]*$/;
@@ -54,18 +54,18 @@ class Validator {
         
         switch (i) {
             case 0:
-                if(!this.userInput.fullName.match(let_spc_reg) || this.userInput.fullName.match(/^\s*$/)) return false
-                if(!this.userInput.nickName.match(let_spc_und_reg)) return false
-                if(!this.userInput.email.match(email_reg)) return false
-                if(this.userInput.age === '') return false;
-                if(!this.userInput.checkbox === true) return false
-                if(this.age === '') return false
                 document.querySelector('[name="phone"]').value = this.userInput.phone.replace(/\D/g, '')
                     .replace(/^(\d)/, '($1')
                     .replace(/^(\(\d{2})(\d)/, '$1) $2')
                     .replace(/(\d{5})(\d{1,5})/, '$1-$2')
                     .replace(/(-\d{4})\d+?$/, '$1');
-
+                    
+                if(!this.userInput.fullName.match(let_spc_reg) || this.userInput.fullName.match(/^\s*$/)) return false
+                if(!this.userInput.nickName.match(let_spc_und_reg)) return false
+                if(!this.userInput.email.match(email_reg)) return false
+                if(this.userInput.age === '') return false;
+                if(!this.userInput.checkbox === true) return false
+                if(this.age === '') return false    
                 return true;
 
             case 1:
