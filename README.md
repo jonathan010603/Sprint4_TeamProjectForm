@@ -1,7 +1,5 @@
 # TeamProjectForm
 
-check this out: https://jonathan010603.github.io/TeamProjectForm/ 
-
 - Developed on 5th sprint of my Compass.UOL internship
 - Developed using vanilla HTML, CSS, SCSS, Bootstrap and JavaScript
 
